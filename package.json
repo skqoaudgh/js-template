@@ -1,0 +1,27 @@
+{
+	"name": "project",
+	"version": "1.0.0",
+	"main": "index.js",
+	"directories": {
+		"test": "test"
+	},
+	"scripts": {
+		"lint": "eslint .",
+		"build": "tsc -t es6"
+	},
+	"author": "cada",
+	"license": "MIT",
+	"description": "",
+	"devDependencies": {
+		"@eslint/js": "^9.2.0",
+		"@stylistic/eslint-plugin-js": "^1.8.0",
+		"@stylistic/eslint-plugin-ts": "^1.8.0",
+		"eslint": "^9.2.0",
+		"eslint-plugin-react": "^7.34.1",
+		"globals": "^15.1.0",
+		"typescript-eslint": "^7.8.0"
+	},
+	"dependencies": {
+		"@stylistic/eslint-plugin": "^1.8.0"
+	}
+}
