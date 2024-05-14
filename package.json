@@ -6,19 +6,24 @@
 		"test": "test"
 	},
 	"scripts": {
-		"lint": "eslint .",
-		"build": "tsc -t es6"
+		"dev": "rollup -c -w",
+		"build": "rollup -c",
+		"lint": "eslint . --fix"
 	},
 	"author": "cada",
 	"license": "MIT",
 	"description": "",
 	"devDependencies": {
 		"@eslint/js": "^9.2.0",
+		"@rollup/plugin-terser": "^0.4.4",
+		"@rollup/plugin-typescript": "^11.1.6",
 		"@stylistic/eslint-plugin-js": "^1.8.0",
 		"@stylistic/eslint-plugin-ts": "^1.8.0",
 		"eslint": "^9.2.0",
 		"eslint-plugin-react": "^7.34.1",
 		"globals": "^15.1.0",
+		"rollup": "^4.17.2",
+		"tslib": "^2.6.2",
 		"typescript-eslint": "^7.8.0"
 	},
 	"dependencies": {
