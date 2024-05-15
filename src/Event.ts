@@ -1,15 +1,17 @@
 export interface DataInterface {
+	url: string;
 	tag: string;
 	label: string;
 	attributes: object;
-	date: string;
+	timestamp: string;
 }
 
 class Event {
+	private url: string;
 	private tag: string;
 	private label: string;
 	private attributes: object;
-	private date: string;
+	private timestamp: string;
     
 	constructor(element: HTMLElement) {
 		const { attributes: attrs } = element;
@@ -26,18 +28,20 @@ class Event {
 			return acc;
 		}, {});
 
+		this.url = window.location.href;
 		this.tag = element.tagName;
 		this.label=  labelArray.join('\n');
 		this.attributes = attributes;
-		this.date = new Date().toISOString();
+		this.timestamp = new Date().toISOString();
 	}
 
 	getEventData(): DataInterface {
 		return {
+			url: this.url,
 			tag: this.tag,
 			label: this.label,
 			...Object.keys(this.attributes).length > 0 && { attributes: this.attributes },
-			date: this.date,
+			timestamp: this.timestamp,
 		};
 	}
 }
