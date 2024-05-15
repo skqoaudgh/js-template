@@ -29,4 +29,30 @@ const postEvents = async (url: string, payload: DataInterface[]) => {
 	}
 };
 
-export { postEvents };
+const postPageView = async (url: string, { visitedUrl, timestamp }) => {
+	const userId = getCookie(COOKIE_NAME) || (await initFingerprint());
+
+	const body = {
+		url: visitedUrl,
+		key: 'key',
+		userId,
+		timestamp,
+	};
+
+	try {
+		const response = await fetch(url, {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringify(body),
+		});
+
+		return { ...response.json() };
+    
+	} catch {
+		return { result: false };
+	}
+};
+
+export { postEvents, postPageView };

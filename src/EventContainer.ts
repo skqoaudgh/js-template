@@ -1,8 +1,7 @@
 import Event, { DataInterface } from './Event';
 import { postEvents } from './utils/fetch';
 
-const URL = 'http://localhost:3000';
-const MAX_PAYLOAD_SIZE: number = 5;
+import { EVENT_POST_URL, MAX_PAYLOAD_SIZE } from './constants';
 
 interface PostWithRetryPayload {
 	events?: Event[];
@@ -41,7 +40,7 @@ class EventContainer {
 		const parsedEvents: DataInterface[] = targetEvents.map((event) => event.getEventData());
 		this.events = [];
         
-		postEvents(URL, parsedEvents).then(({ result }) => {
+		postEvents(EVENT_POST_URL, parsedEvents).then(({ result }) => {
 			if(!result) {
 				if(count < 1) {
 					return console.error('Failed to post event data');

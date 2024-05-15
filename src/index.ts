@@ -2,7 +2,10 @@ import EventContainerClass from './EventContainer';
 import EventClass from './Event';
 
 import { initFingerprint } from './utils/fingerprint';
+import { initUrlListener } from './utils/url';
+
 initFingerprint();
+initUrlListener();
 
 const eventContainer: EventContainerClass = EventContainerClass.getInstance();
 
