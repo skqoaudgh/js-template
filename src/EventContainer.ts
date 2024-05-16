@@ -46,7 +46,7 @@ class EventContainer {
 					return console.error('Failed to post event data');
 				}
                 
-				this.postWithRetry({ events: targetEvents, count: count-1 });
+				this.postWithRetry({ events: targetEvents, count: count - 1 });
 			}
 		});
 	}

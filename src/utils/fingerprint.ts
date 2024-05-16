@@ -110,8 +110,8 @@ const initFingerprint = async (): Promise<string> => {
 	ctx.rotate(.03);
 	ctx.fillText(txt, 4, 17);
 	ctx.fillStyle = 'rgb(155,255,5)';
-	ctx.shadowBlur=8;
-	ctx.shadowColor='red';
+	ctx.shadowBlur = 8;
+	ctx.shadowColor = 'red';
 	ctx.fillRect(20, 12, 100, 5);
 
 	features += canvas.toDataURL();

@@ -40,6 +40,12 @@ export default [
 			'@stylistic/arrow-parens': ['error', 'always'],
 
 			'@stylistic/no-multiple-empty-lines': ['error', { max: 1, maxEOF: 0, maxBOF: 0 }],
+
+			'@stylistic/space-unary-ops': ['error'],
+			'@stylistic/space-infix-ops': ['error'],
 		},
+	},
+	{
+		ignores: ['dist/', 'node_modules/'],
 	},
 ];

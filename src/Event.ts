@@ -30,7 +30,7 @@ class Event {
 
 		this.url = window.location.href;
 		this.tag = element.tagName;
-		this.label=  labelArray.join('\n');
+		this.label =  labelArray.join('\n');
 		this.attributes = attributes;
 		this.timestamp = new Date().toISOString();
 	}
